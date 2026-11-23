@@ -2,6 +2,7 @@ from PySide6.QtWidgets import QApplication, QWidget, QPushButton, QFileDialog, Q
 
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg, NavigationToolbar2QT
+import numpy as np
 
 from About import AboutWindow
 
@@ -37,9 +38,7 @@ class MainWindow(QWidget):
         self.update_graph()
 
     def load_file(self):
-        filename, _ = QFileDialog.getOpenFileName(
-            self, 'Select Ice Cream CSV', '', 'CSV files (*.csv)'
-        )
+        filename, _ = QFileDialog.getOpenFileName(self, 'Select Ice Cream CSV', '', 'CSV files (*.csv)')
 
         if filename == '':
             return
@@ -59,6 +58,21 @@ class MainWindow(QWidget):
     def update_graph(self):
         self.ax.clear()
         self.ax.scatter(self.temperatures, self.profits, s=1)
+
+        if len(set(self.temperatures)) >= 2:
+            m, b = np.polyfit(self.temperatures, self.profits, 1)
+
+            x_line = [min(self.temperatures), max(self.temperatures)]
+            y_line = [m * x_line[0] + b, m * x_line[1] + b]
+
+            self.ax.plot(
+                x_line, y_line,
+                color='red',
+                label=f'y = {m:.2f}x {b:+.2f}'
+            )
+            
+            self.ax.legend()
+
         self.ax.set_title('Ice Cream Profit vs. Temperature')
         self.ax.set_xlabel('Temperature')
         self.ax.set_ylabel('Profit')
