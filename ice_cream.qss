@@ -1,0 +1,131 @@
+/* CHART_COLORS
+chart-background: #0b1120
+chart-plot: #0f172a
+chart-grid: #334155
+chart-tick: #94a3b8
+chart-title: #f8fafc
+chart-axis-label: #bfdbfe
+chart-scatter: #38bdf8
+chart-trendline: #fbbf24
+chart-legend-background: #111827
+chart-legend-border: #334155
+chart-legend-text: #dbeafe
+*/
+
+* {
+    font-family: "Segoe UI", "Arial";
+    outline: none;
+}
+
+QWidget {
+    background-color: #0b1120;
+    color: #dbeafe;
+    font-size: 14px;
+}
+
+QWidget#mainWindow,
+QWidget#aboutWindow {
+    background-color: #0b1120;
+}
+
+QLabel#appTitle {
+    color: #f8fafc;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+QLabel#appSubtitle {
+    color: #7dd3fc;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+QFrame#chartCard {
+    background-color: #111827;
+    border: 1px solid #263244;
+    border-radius: 14px;
+}
+
+QPushButton {
+    background-color: #172033;
+    color: #f8fafc;
+    border: 1px solid #334155;
+    border-radius: 9px;
+    padding: 8px 13px;
+    font-weight: 600;
+    min-height: 18px;
+}
+
+QPushButton:hover {
+    background-color: #1d4ed8;
+    border-color: #60a5fa;
+}
+
+QPushButton:pressed {
+    background-color: #172554;
+}
+
+QPushButton#primaryButton {
+    background-color: #2563eb;
+    border-color: #60a5fa;
+    padding: 10px 18px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+QPushButton#primaryButton:hover {
+    background-color: #3b82f6;
+}
+
+QPushButton#aboutButton {
+    padding: 7px 12px;
+    font-size: 13px;
+}
+
+QToolBar#chartToolbar {
+    background-color: transparent;
+    border: none;
+    spacing: 4px;
+}
+
+QToolBar#chartToolbar QToolButton {
+    background-color: #172033;
+    color: #dbeafe;
+    border: 1px solid #263244;
+    border-radius: 6px;
+    padding: 4px;
+}
+
+QToolBar#chartToolbar QToolButton:hover {
+    background-color: #1d4ed8;
+}
+
+QLabel#aboutName {
+    color: #60a5fa;
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+QLabel#aboutEmail {
+    color: #cbd5e1;
+    font-size: 13px;
+}
+
+QLabel#aboutPicture {
+    background-color: #0c1425;
+    border: 2px solid #334155;
+    border-radius: 12px;
+}
+
+QLabel#aboutLink {
+    background-color: #1d4ed8;
+    color: #ffffff;
+    border: 1px solid #60a5fa;
+    border-radius: 9px;
+    padding: 9px 12px;
+    font-size: 16px;
+    font-weight: 700;
+}
